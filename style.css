@@ -1,0 +1,617 @@
+/* GENERAL - Updated Styles */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    background-color: #f0f0f0; /* Added background color for better contrast */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85, 85, 85);
+}
+
+/* HEADER & FOOTER */
+header {
+  background-color: #000; /* Blue color */
+  color: #f8f8f8; /* Text color */
+  padding: 20px; 
+}
+
+footer {
+  width: 100%; /* Full width */
+  height: 26vh;
+  margin: 0; /* Remove side margins */
+  background-color: #000; /* Blue color */
+  color: white; /* Text color */
+}
+
+header .nav-links a,
+footer .nav-links a {
+  color: white; /* Link color */
+  text-decoration: none; 
+}
+
+header .nav-links a:hover,
+footer .nav-links a:hover {
+  text-decoration: underline; 
+}
+
+/* TRANSITION */
+
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: floralwhite;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+/* SECTIONS */
+
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+}
+
+.text-container p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* PROFILE SECTION */
+
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+}
+
+.section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+/* ICONS */
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* BUTTONS */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+  transition: background-color 0.3s ease; /* Added transition for smoother hover effect */
+}
+
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+}
+
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  gap: 1rem;
+}
+
+.about-containers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem; /* Increase gap for better spacing */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.about-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+.details-container {
+  padding: 2rem;
+  flex: 1;
+  min-width: 300px; /* Ensure responsiveness */
+  max-width: 500px; /* Prevent excessive stretching */
+  background: white;
+  border-radius: 2rem;
+  border: rgb(163, 163, 163) 0.1rem solid;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; /* Ensures content is fully centered */
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px; /* Adjust max width */
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 400px; /* Control image size */
+  border-radius: 1rem; /* Optional: add rounded corners */
+}
+
+/* EXPERIENCE SECTION */
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.competencies-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-direction: row-reverse; /* Reverse the order (right to left) */
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.details-container {
+  flex: 1;
+  max-width: 500px;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(163, 163, 163);
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for items */
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Style for individual articles */
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Icon styling */
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Center the titles for each section */
+.experience-sub-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .competencies-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .details-container {
+      max-width: 100%;
+  }
+}
+
+/* SOFTWARE SECTION */
+.software-container {
+  display: flex;
+  flex-direction: column; /* Ubah jadi 1 kolom */
+  align-items: center; /* Tengahin konten */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column; /* Ubah jadi 1 kolom */
+  align-items: center; /* Tengahin konten */
+  gap: 2.5rem;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 150px;
+}
+
+article .icon {
+  cursor: default;
+}
+
+/* PROJECT CONTAINER */
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-containers {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.details-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.details-container:hover {
+  transform: scale(1.05);
+}
+
+.project-img {
+  width: 100%;
+  aspect-ratio: 1/1; /* Ensure square aspect ratio */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-title {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.article-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Background transparan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  width: 100vw; /* Sedikit lebih lebar dari sebelumnya */
+  max-width: 450px; /* Maksimal ukuran agar tetap proporsional */
+  padding: 1.2rem; /* Kasih sedikit ruang ekstra */
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+} /* Close the .modal-content class properly */
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.modal-img {
+  width: 400px;  /* Atur ukuran jadi lebih kecil */
+  height: 400px; /* Biar tetap 1:1 */
+  object-fit: cover; /* Pastikan gambar tetap proporsional */
+  margin: 1rem auto;
+  display: block;
+  border-radius: 10px; /* Opsional: Biar sudutnya agak rounded */
+}
+
+.modal-description {
+  font-size: 0.95rem; /* Sedikit lebih kecil */
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+/* Tanggal proyek */
+#modal-date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 10px; /* Kasih jarak dari judul */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+close:hover {
+  color: red;
+}
+
+/* CONTACT */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250); /* Fixed background color */
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
+  cursor: default;
+  width: auto; /* Ensure the width is auto to prevent stretching */
+  height: 3rem; /* Maintain the height */
+}
+
+.email-icon {
+  height: 3rem;
+}
+
+/* FOOTER SECTION */
+
+footer {
+  width: 100%; /* Full width */
+  height: 26vh;
+  margin: 0; /* Remove side margins */
+  background-color: #000; /* Blue color */
+  color: white; /* Text color */
+}
+
+footer p {
+  text-align: center;
+}

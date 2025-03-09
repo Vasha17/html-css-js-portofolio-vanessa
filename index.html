@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<script src="script.js"></script>
+<body>
+    <header>
+        <nav id="desktop-nav">
+            <div class="logo">Vanessa Suharly</div>
+            <div>
+                <ul class="nav-links">
+                   <li><a href="#about">About</a></li> 
+                   <li><a href="#experience">Experience</a></li> 
+                   <li><a href="#projects">Projects</a></li> 
+                   <li><a href="#contact">Contact</a></li> 
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <nav id="hamburger-nav">
+        <div class="logo">Vanessa Suharly</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li> 
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li> 
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li> 
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>  
+            </ul>                  
+        </div>
+    </nav>
+
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./Assets/about-pic-me.png" alt="Vanessa Suharly profile picture">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Vanessa Suharly</h1>
+            <p class="section__text__p2">Senior Year High School Student</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./Assets/CV.pdf')">Resume</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+            </div>
+            <div id="socials-container">
+                <img src="./Assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='//www.linkedin.com/in/vanessa-suharly-370a59354/'" />
+                <img src="./Assets/github.png" alt="My Github profile" class="icon" onclick="location.href='//github.com/Vasha17'" />
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers" style="display: flex; gap: 20px;">
+                    <div class="details-container" onclick="openModal('Academic Focus Grade', '', 'Advanced Mathematics - 87,93,86 | English - 90, 92, 92 | Informatics - 85,87,98 | Economics - 91,94,92', '')">
+                        <h3 class="center-text">Academic Focus</h3>
+                        <p class="center-text">Advanced Mathematics, <br />English, Informatics, and Economics</p>
+                    </div>
+                    <div class="details-container" onclick="openModal('Organization', '', 'Coding Club - Programmer | Director of Academic Affairs - Student Council (OSIS)', '')">
+                        <h3 class="center-text">Organization</h3>
+                        <p class="center-text">Coding Club, <br />Student Council (OSIS)</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>
+                        Hi, I'm Vanessa Shalom Aventha Suharly, an aspiring software engineer with a strong foundation in programming, website development, and problem-solving. I have a passion for digital innovation, demonstrated by my experience in developing websites, optimizing event systems, and building software projects. Skilled in HTML, C++, Microsoft Office, Canva, Scratch, and MIT App Inventor, I excel at creating functional and user-friendly applications.
+  
+                        As a Programmer in the Coding Club, I executed various coding projects, including website development and automation tasks. I also managed and maintained the school’s website, ensuring smooth functionality and user experience. My leadership as the Director of Academic Affairs in OSIS has strengthened my communication and teamwork skills, where I led initiatives and fostered collaboration within the academic community.
+                        <br> I'm excited to leverage my technical and leadership experience to develop innovative solutions and contribute to the world of software engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Skills</h1>
+        
+        <div class="experience-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <h2 class="experience-sub-title">Softwares</h2>
+              <div class="article-container">
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>HTML</h3>
+                    <p>Basic</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>CSS</h3>
+                    <p>Basic</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Microsoft Office</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>MIT App Inventor</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <div>
+                    <h3>Scratch</h3>
+                    <p>Intermediate</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+      
+            <div class="details-container">
+              <h2 class="experience-sub-title">Skills</h2>
+              <div class="article-container">
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <h3>Leadership</h3>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <h3>Problem-Solving</h3>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <h3>Teamwork</h3>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <h3>Adaptability</h3>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <h3>Communication</h3>
+                </article>
+                <article>
+                  <img src="./Assets/checkmark.png" alt="Experience icon" class="icon" />
+                  <h3>Time Management</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        />
+      </section>      
+
+      <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+              <div class="details-container color-container" 
+              onclick="openModal('WEATHER', 'April 2022 - June 2022', 
+              'WEATHER is an app to keeps you prepared for any weather changes. It helps you stay ahead of unexpected rain, so you can plan your day with confidence. My first creation to make sure the weather never catches you off guard!', '/Assets/Project-1-me.png')">
+             <div class="article-container">
+                 <img src="/Assets/Project-1-me.png" alt="Project 1" class="project-img"/>
+             </div>
+             <h2 class="experience-sub-title project-title">Project One</h2>
+         </div>
+         
+         <div class="details-container color-container" 
+              onclick="openModal('CUBE', 'July 2023 - September 2023', 
+              'Get ready for endless fun! CUBE is a thrilling and addictive platformer where you hop, skip, and jump through exciting challenges. Created by our duo team, this game is designed purely for entertainment—simple, yet impossible to put down!', '/Assets/Project-2-me.png')">
+             <div class="article-container">
+                 <img src="/Assets/Project-2-me.png" alt="Project 2" class="project-img"/>
+             </div>
+             <h2 class="experience-sub-title project-title">Project Two</h2>
+         </div>
+         
+         <div class="details-container color-container" 
+              onclick="openModal('OFFICIAL WEBSITE', 'August 2024 - Present', 
+              'Explore the heart of our school community through our dynamic website, managed by our dedicated team. Together, we ensure it stays engaging, informative, and always up to date!', '/Assets/Project-3-me.png')">
+             <div class="article-container">
+                 <img src="/Assets/Project-3-me.png" alt="Project 3" class="project-img"/>
+             </div>
+             <h2 class="experience-sub-title project-title">Project Three</h2>
+         </div>         
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <p id="modal-date"></p>
+            </div>
+            <img id="modal-image" src="" alt="Project Image" class="modal-img">
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    
+    <script>
+        function openModal(title, date, description, imageUrl) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-date").innerText = date;
+            document.getElementById("modal-description").innerText = description;
+            document.getElementById("modal-image").src = imageUrl;
+            document.getElementById("projectModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("projectModal").style.display = "none";
+        }
+    </script>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./Assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:vanessa.sha75@gmail.com">Vanessa.sha75@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./Assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/vanessa-suharly-370a59354/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2025 Vanessa Suharly. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
