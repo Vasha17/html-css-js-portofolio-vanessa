@@ -28,14 +28,96 @@ header {
   background-color: #000; /* Blue color */
   color: #f8f8f8; /* Text color */
   padding: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  position: fixed; /* Fix header at the top */
+  width: 100%; /* Full width */
+  top: 0; /* Align to the top */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+header .logo {
+  font-size: 2rem;
+  font-weight: 600; /* Make logo text bold */
+  font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .nav-links {
+  display: none; /* Hide nav links on desktop */
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header .nav-links a {
+  color: white; /* Link color */
+  text-decoration: none;
+  font-size: 1rem; /* Adjust font size */
+  transition: color 0.3s ease; /* Add transition for hover effect */
+}
+
+header .nav-links a:hover {
+  color: #f0f0f0; /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+header .hamburger-icon {
+  display: flex; /* Ensure hamburger icon is always visible */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+header .hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 footer {
   width: 100%; /* Full width */
-  height: 26vh;
-  margin: 0; /* Remove side margins */
+  padding: 2rem 0; /* Add padding for better spacing */
   background-color: #000; /* Blue color */
   color: white; /* Text color */
+  text-align: center; /* Center align text */
+}
+
+footer nav {
+  margin-bottom: 1rem; /* Add margin for spacing */
+}
+
+footer .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Add gap between links */
+  list-style: none;
+  padding: 0;
+}
+
+footer .nav-links a {
+  color: white; /* Link color */
+  text-decoration: none;
+  font-size: 1rem; /* Adjust font size */
+  transition: color 0.3s ease; /* Add transition for hover effect */
+}
+
+footer .nav-links a:hover {
+  color: #f0f0f0; /* Change color on hover */
+}
+
+footer p {
+  margin-top: 1rem; /* Add margin for spacing */
+  font-size: 0.875rem; /* Adjust font size */
+  color: #ccc; /* Change text color */
 }
 
 header .nav-links a,
@@ -226,19 +308,19 @@ section {
 
 .section__text__p2 {
   font-size: 1.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Add gap below */
 }
 
 .title {
   font-size: 3rem;
   text-align: center;
+  margin-bottom: 1rem; /* Add gap below */
 }
 
 #socials-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  margin-top: 1rem; /* Add gap above */
 }
 
 /* ICONS */
@@ -253,7 +335,6 @@ section {
 .btn-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
 }
 
 .btn {
@@ -357,13 +438,13 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 1rem 0; /* Reduced margin */
 }
 
 .competencies-container {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem; /* Reduced gap */
   flex-direction: row-reverse; /* Reverse the order (right to left) */
   flex-wrap: wrap; /* Ensure responsiveness */
 }
@@ -371,7 +452,7 @@ section {
 .details-container {
   flex: 1;
   max-width: 500px;
-  padding: 1.5rem;
+  padding: 1rem; /* Reduced padding */
   background: white;
   border-radius: 1rem;
   border: 1px solid rgb(163, 163, 163);
@@ -384,7 +465,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 1rem;
+  gap: 0.5rem; /* Reduced gap */
   justify-content: center;
 }
 
@@ -400,13 +481,13 @@ article {
 .icon {
   width: 30px;
   height: 30px;
-  margin-right: 10px;
+  margin-right: 5px; /* Reduced margin */
 }
 
 /* Center the titles for each section */
 .experience-sub-title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Reduced margin */
 }
 
 /* Responsive adjustments */
@@ -426,7 +507,7 @@ article {
   display: flex;
   flex-direction: column; /* Ubah jadi 1 kolom */
   align-items: center; /* Tengahin konten */
-  gap: 1rem;
+  gap: 0.5rem; /* Reduced gap */
   margin-top: 1rem;
 }
 
@@ -434,7 +515,7 @@ article {
   display: flex;
   flex-direction: column; /* Ubah jadi 1 kolom */
   align-items: center; /* Tengahin konten */
-  gap: 2.5rem;
+  gap: 1rem; /* Reduced gap */
 }
 
 article {
@@ -477,6 +558,7 @@ article .icon {
 
 .project-img {
   width: 100%;
+  max-width: 200px; /* Reduced max width */
   aspect-ratio: 1/1; /* Ensure square aspect ratio */
   object-fit: cover;
   border-radius: 8px;
@@ -566,18 +648,22 @@ close:hover {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 90vh;
+  height: auto; /* Adjust height to fit content */
+  padding: 2rem; /* Add padding for better spacing */
 }
 
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
+  align-items: center; /* Center align items */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250); /* Fixed background color */
-  margin: 2rem auto;
-  padding: 0.5rem;
+  margin: 0.5rem auto; /* Reduced margin */
+  padding: 1rem; /* Add padding for better spacing */
+  gap: 0.5rem; /* Reduced gap between items */
 }
 
 .contact-info-container {
@@ -585,11 +671,14 @@ close:hover {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin: 1rem;
+  margin: 0.5rem; /* Reduced margin */
+  flex: 1; /* Allow items to grow equally */
+  min-width: 200px; /* Ensure minimum width */
 }
 
 .contact-info-container p {
   font-size: larger;
+  margin: 0; /* Remove default margin */
 }
 
 .contact-icon {
@@ -606,12 +695,95 @@ close:hover {
 
 footer {
   width: 100%; /* Full width */
-  height: 26vh;
-  margin: 0; /* Remove side margins */
+  padding: 2rem 0; /* Add padding for better spacing */
   background-color: #000; /* Blue color */
   color: white; /* Text color */
+  text-align: center; /* Center align text */
+}
+
+footer nav {
+  margin-bottom: 1rem; /* Add margin for spacing */
+}
+
+footer .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Add gap between links */
+  list-style: none;
+  padding: 0;
+}
+
+footer .nav-links a {
+  color: white; /* Link color */
+  text-decoration: none;
+  font-size: 1rem; /* Adjust font size */
+  transition: color 0.3s ease; /* Add transition for hover effect */
+}
+
+footer .nav-links a:hover {
+  color: #f0f0f0; /* Change color on hover */
 }
 
 footer p {
-  text-align: center;
+  margin-top: 1rem; /* Add margin for spacing */
+  font-size: 0.875rem; /* Adjust font size */
+  color: #ccc; /* Change text color */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #desktop-nav {
+        display: none;
+    }
+    #hamburger-nav {
+        display: flex;
+    }
+    .section__pic-container img {
+        width: auto;
+        height: auto;
+    }
+    .section__text {
+        text-align: center;
+    }
+    .about-containers {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .details-container {
+        width: auto;
+    }
+    .experience-details-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .contact-info-upper-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 769px) {
+    #hamburger-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+  header .nav-links {
+    display: none; /* Hide nav links on mobile */
+  }
+  header .hamburger-icon {
+    display: flex; /* Show hamburger icon on mobile */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+  }
+  header .hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
 }

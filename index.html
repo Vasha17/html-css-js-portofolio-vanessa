@@ -11,16 +11,19 @@
 <script src="script.js"></script>
 <body>
     <header>
-        <nav id="desktop-nav">
+        <nav>
             <div class="logo">Vanessa Suharly</div>
-            <div>
-                <ul class="nav-links">
-                   <li><a href="#about">About</a></li> 
-                   <li><a href="#experience">Experience</a></li> 
-                   <li><a href="#projects">Projects</a></li> 
-                   <li><a href="#contact">Contact</a></li> 
-                </ul>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -49,7 +52,7 @@
             <p class="section__text__p1">Hello, I'm</p>
             <h1 class="title">Vanessa Suharly</h1>
             <p class="section__text__p2">Senior Year High School Student</p>
-            <div class="btn-container">
+            <div class="btn-container" style="gap: 20px;">
                 <button class="btn btn-color-2" onclick="window.open('./Assets/CV.pdf')">Resume</button>
                 <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
             </div>
@@ -254,14 +257,12 @@
     </section>
     <footer>
       <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
       <p>Copyright &#169; 2025 Vanessa Suharly. All Rights Reserved.</p>
     </footer>
