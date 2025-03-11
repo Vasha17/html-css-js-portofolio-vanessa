@@ -1,7 +1,7 @@
 function toggleMenu() {
-    const menu = document.querySelector('.menu-links');
-    const icon = document.querySelector('.hamburger-icon');
-    menu.classList.toggle("open");
+    const menu = document.getElementById('mobile-nav');
+    const icon = document.querySelector('.hamburger');
+    menu.classList.toggle("active");
     icon.classList.toggle("open");
 }
 
@@ -23,7 +23,7 @@ function closeModal() {
     document.getElementById("projectModal").style.display = "none";
 }
 
-// Tutup modal hanya jika klik di luar modal-content
+// Close modal when clicking outside of modal-content
 document.getElementById("projectModal").addEventListener("click", function (event) {
     if (event.target === this) {
         closeModal();
@@ -33,3 +33,18 @@ document.getElementById("projectModal").addEventListener("click", function (even
 // Ensure the modal close button works
 document.querySelector(".close").addEventListener("click", closeModal);
 
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+        hamburger.setAttribute('aria-expanded', !expanded);
+    });
+});
+
+function toggleMenu() {
+    const menu = document.querySelector('.nav-menu');
+    menu.classList.toggle('open');
+}
