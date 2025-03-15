@@ -261,22 +261,22 @@ section {
   gap: 1rem;
 }
 
-/* EXPERIENCE SECTION */
+/* COMPETENCIES SECTION */
 .experience-details-container {
   display: flex;
-  flex-direction: column; /* Stack sections vertically */
-  align-items: center; /* Center align sections */
-  gap: 20px; /* Adjust gap between sections */
-  margin: 1rem 0; /* Reduced margin */
-  margin-bottom: 30px; /* Add margin below each section */
+  flex-direction: column; /* Susun vertikal */
+  align-items: center; /* Tengahin elemen */
+  justify-content: center; /* Tengahin vertikal */
+  width: 100%; /* Pastikan full lebar */
+  text-align: center; /* Tengahin teks */
 }
 
 .competencies-container {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem; /* Reduced gap */
-  flex-direction: row-reverse; /* Reverse the order (right to left) */
-  flex-wrap: wrap; /* Ensure responsiveness */
+  justify-content: center; /* Tengahin horizontal */
+  align-items: center; /* Tengahin vertikal */
+  flex-wrap: wrap; /* Supaya responsif */
+  gap: 1rem; /* Jarak antar elemen */
 }
 
 .details-container {
@@ -292,9 +292,10 @@ section {
 /* Grid layout for items */
 .article-container {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center align items */
-  gap: 10px; /* Adjust gap between items */
+  flex-direction: column; /* Susun ke bawah */
+  align-items: center; /* Tengahin elemen */
+  text-align: center; /* Tengahin teks */
+  gap: 0.5rem; /* Jarak antar elemen */
 }
 
 /* Style for individual articles */
@@ -327,6 +328,10 @@ article {
 
   .details-container {
       max-width: 100%;
+  }
+  .experience-details-container,
+  .about-containers {
+    justify-content: center; /* Center the projects and experience sections */
   }
 }
 
@@ -375,15 +380,17 @@ article .icon {
 /* PROJECT CONTAINER */
 .experience-details-container {
   display: flex;
-  justify-content: space-between; /* Center the projects */
+  justify-content: center; /* Center the projects */
+  align-items: center; /* Center vertically */
   gap: 10px; /* Reduce spacing between projects */
   flex-wrap: wrap; /* Allow wrapping if necessary */
 }
 
 .about-containers {
   display: flex;
-  justify-content: space-between;
-  gap: 10px; /* Kurangi gap */
+  justify-content: center; /* Center the about containers */
+  align-items: center; /* Center vertically */
+  gap: 10px; /* Reduce gap */
   width: 100%;
 }
 
@@ -395,8 +402,11 @@ article .icon {
 }
 
 .project-img {
-  width: 100%; /* Pastikan gambar menyesuaikan container */
-  height: auto;
+  width: 100%;
+  max-width: 200px; /* Increase max width */
+  aspect-ratio: 1/1; /* Ensure square aspect ratio */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .details-container {
@@ -420,14 +430,6 @@ article .icon {
 }
 .details-container.color-container h2.project-title {
   font-size: 1em; /* Reduce the font size */
-}
-
-.project-img {
-  width: 100%;
-  max-width: 150px; /* Reduced max width */
-  aspect-ratio: 1/1; /* Ensure square aspect ratio */
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 .project-title {
