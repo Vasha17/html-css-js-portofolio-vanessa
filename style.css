@@ -5,7 +5,6 @@
 
 * {
   margin: 5px;
-  padding: 0.5px;
 }
 
 body {
@@ -33,14 +32,12 @@ p {
 header {
   background-color: #000; /* Blue color */
   color: #f8f8f8; /* Text color */
-  padding: 0.005px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
   position: fixed; /* Fix header at the top */
   width: 100vw; /* Full width */
   left: 0; /* Align to the left */
   top: 0; /* Align to the top */
   z-index: 1000; /* Ensure it stays on top */
-  position: fixed;
   width: 100vw;
 }
 
@@ -57,12 +54,11 @@ header nav {
 }
 
 header .nav-links {
-  display: auto; /* Show nav links on desktop */
-  gap: 400vx; /* Adjust gap between links */
+  display: flex; /* Show nav links on desktop */
+  gap: 400px; /* Adjust gap between links */
   list-style: none;
   padding-top: 10px;
   margin: 0;
-  margin-left: right; /* Align links to the right */
   margin-bottom: 30px; /* Add space below the nav links */
 }
 
@@ -83,46 +79,6 @@ header .nav-links a:hover {
 header .hamburger-icon {
   display: none; /* Remove hamburger menu */
 }
-
-footer {
-  width: 100vw; /* Full width */
-  padding: 2rem 0; /* Add padding for better spacing */
-  background-color: #000; /* Blue color */
-  color: white; /* Text color */
-  text-align: center; /* Center align text */
-  margin-top: auto; /* Push footer to the bottom */
-  left: 0; /* Align to the left */
-}
-
-footer nav {
-  margin-bottom: 1rem; /* Add margin for spacing */
-}
-
-footer .nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem; /* Add gap between links */
-  list-style: none;
-  padding: 0;
-}
-
-footer .nav-links a {
-  color: white; /* Link color */
-  text-decoration: none;
-  font-size: 1rem; /* Adjust font size */
-  transition: color 0.3s ease; /* Add transition for hover effect */
-}
-
-footer .nav-links a:hover {
-  color: #f0f0f0; /* Change color on hover */
-}
-
-footer p {
-  margin-top: 1rem; /* Add margin for spacing */
-  font-size: 0.875rem; /* Adjust font size */
-  color: #ccc; /* Change text color */
-}
-
 header .nav-links a,
 footer .nav-links a {
   color: white; /* Link color */
@@ -193,7 +149,7 @@ section {
 }
 
 .section-container {
-  display: auto;
+  display: flex;
 }
 
 .text-container p {
@@ -228,6 +184,7 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  margin-bottom: 0; /* Remove margin below "Explore My" */
 }
 
 .section__text__p2 {
@@ -239,6 +196,7 @@ section {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 1rem; /* Add gap below */
+  margin-top: 0; /* Remove margin above "Competencesis" */
 }
 
 #socials-container {
@@ -303,60 +261,14 @@ section {
   gap: 1rem;
 }
 
-/* ABOUT SECTION */
-.about-containers {
-  display: flex;
-  justify-content: flex-start; /* Align to the left */
-  align-items: center;
-  gap: 6rem; /* Increase gap for better spacing */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.about-details-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem; /* Increase gap for better spacing */
-}
-
-.section {
-  margin-bottom: 100rem; /* Tambah jaraknya antar section */
-  padding-top: 100vh; /* Biar lebih longgar dari atas */
-  text-align: right;
-}
-
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
-
-.details-container {
-  padding: 2rem;
-  flex: 1;
-  min-width: 300px; /* Ensure responsiveness */
-  max-width: 500px; /* Prevent excessive stretching */
-  background: white;
-  border-radius: 2rem;
-  border: rgb(163, 163, 163) 0.1rem solid;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; /* Ensures content is fully centered */
-}
-
 /* EXPERIENCE SECTION */
 .experience-details-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center align sections */
+  gap: 20px; /* Adjust gap between sections */
   margin: 1rem 0; /* Reduced margin */
-  margin-bottom: 4rem; /* Add margin below each section */
+  margin-bottom: 30px; /* Add margin below each section */
 }
 
 .competencies-container {
@@ -368,23 +280,21 @@ section {
 }
 
 .details-container {
-  flex: 1;
-  max-width: 500px;
-  padding: 1rem; /* Reduced padding */
-  background: white;
-  border-radius: 1rem;
-  border: 1px solid rgb(163, 163, 163);
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align text */
+  width: auto; /* Adjust width to fit content */
+  padding: 10px; /* Add padding for better spacing */
+  border: 1px solid #ddd; /* Add border for better visibility */
+  border-radius: 10px; /* Add border radius for better aesthetics */
+  background-color: #f9f9f9; /* Add background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
 }
 
 /* Grid layout for items */
 .article-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 0.5rem; /* Reduced gap */
-  justify-content: center;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
+  gap: 10px; /* Adjust gap between items */
 }
 
 /* Style for individual articles */
@@ -423,42 +333,70 @@ article {
 /* SOFTWARE SECTION */
 .software-container {
   display: flex;
-  flex-direction: column; /* Ubah jadi 1 kolom */
-  align-items: center; /* Tengahin konten */
-  gap: 0.5rem; /* Reduced gap */
-  margin-top: 1rem;
+  flex-direction: row; /* Supaya "Software" dan skills sejajar */
+  align-items: center; /* Tengahin vertikal */
+  justify-content: center; /* Tengahin horizontal */
+  gap: 0.5rem; /* Kurangi jarak antar elemen */
+  margin-top: 0.5rem; /* Kurangi margin atas */
+  flex-wrap: wrap; /* Biar responsif */
+}
+
+.software-container h3 {
+  margin: 0; /* Hilangin margin biar mepet */
+  white-space: nowrap; /* Biar tulisan "Software" nggak turun */
 }
 
 .article-container {
   display: flex;
-  flex-direction: column; /* Ubah jadi 1 kolom */
-  align-items: center; /* Tengahin konten */
-  gap: 1rem; /* Reduced gap */
+  flex-direction: row; /* Supaya sejajar */
+  align-items: center;
+  gap: 0.3rem; /* Kurangi jarak antar skill */
+  flex-wrap: wrap; /* Supaya responsif */
 }
 
 article {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
-  min-width: 150px;
+  gap: 0.3rem; /* Biar lebih nempel */
+  min-width: auto; /* Biar fleksibel */
+  margin: 0; /* Hilangin margin */
+  padding: 0; /* Hilangin padding */
 }
 
 article .icon {
   cursor: default;
+  width: 25px; /* Adjust ukuran ikon */
+  height: 25px; /* Adjust ukuran ikon */
 }
+
+
 
 /* PROJECT CONTAINER */
 .experience-details-container {
   display: flex;
-  justify-content: center;
-  margin-bottom: 4rem; /* Add margin below each section */
+  justify-content: space-between; /* Center the projects */
+  gap: 10px; /* Reduce spacing between projects */
+  flex-wrap: wrap; /* Allow wrapping if necessary */
 }
 
 .about-containers {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 10px; /* Kurangi gap */
+  width: 100%;
+}
+
+.details-container {
+  flex: 1; /* Supaya semua proyek punya lebar yang sama */
+  max-width: 30%; /* Biar 3 proyek muat dalam 1 baris */
+  min-width: 280px; /* Pastikan tetap responsif */
+  text-align: center;
+}
+
+.project-img {
+  width: 100%; /* Pastikan gambar menyesuaikan container */
+  height: auto;
 }
 
 .details-container {
@@ -472,7 +410,8 @@ article .icon {
 }
 
 .details-container.color-container {
-  max-width: 300px; /* Adjust the width as needed */
+  flex-basis: 30%;
+  max-width: 200px; /* Adjust the width as needed */
   padding: 1px; /* Adjust the padding as needed */
 }
 .details-container.color-container img.project-img {
@@ -485,7 +424,7 @@ article .icon {
 
 .project-img {
   width: 100%;
-  max-width: 200px; /* Reduced max width */
+  max-width: 150px; /* Reduced max width */
   aspect-ratio: 1/1; /* Ensure square aspect ratio */
   object-fit: cover;
   border-radius: 8px;
@@ -502,71 +441,67 @@ article .icon {
   justify-content: center;
 }
 
-/* Modal styling */
+/* ======== MODAL STYLING ======== */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 2000; /* Pastikan di atas header */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Background transparan */
+  background-color: rgba(0, 0, 0, 0.5); /* Background hitam transparan */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start; /* Modal mulai dari atas */
+  padding-top: 120px; /* Lebih besar supaya lebih turun */
 }
 
+/* Kotak pop-up */
 .modal-content {
-  background: white;
-  width: 100vw; /* Sedikit lebih lebar dari sebelumnya */
-  max-width: 450px; /* Maksimal ukuran agar tetap proporsional */
-  padding: 1.2rem; /* Kasih sedikit ruang ekstra */
+  background-color: white;
+  width: 80vw;
+  max-width: 600px;
+  padding: 2rem;
   border-radius: 10px;
-  text-align: justify;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-} /* Close the .modal-content class properly */
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.1rem;
-  font-weight: bold;
 }
 
-.modal-img {
-  width: 400px;  /* Atur ukuran jadi lebih kecil */
-  height: 400px; /* Biar tetap 1:1 */
-  object-fit: cover; /* Pastikan gambar tetap proporsional */
-  margin: 1rem auto;
-  display: block;
-  border-radius: 10px; /* Opsional: Biar sudutnya agak rounded */
-}
-
-.modal-description {
-  font-size: 0.95rem; /* Sedikit lebih kecil */
-  line-height: 1.5;
-  padding: 0 1rem;
-}
-
-/* Tanggal proyek */
-#modal-date {
-  font-size: 0.9rem;
-  color: gray;
-  margin-top: 10px; /* Kasih jarak dari judul */
-}
-
+/* Tombol close (X) */
 .close {
   position: absolute;
-  top: 1px;
-  right: 20px;
-  font-size: 2rem;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
   cursor: pointer;
 }
 
-close:hover {
-  color: red;
+/* Tanggal proyek - dipindah ke samping tombol close */
+#modal-date {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* Gambar dalam modal */
+.modal-img {
+  width: 100%;
+  max-width: 150px; /* Ukuran lebih kecil, sekitar 1/4 modal */
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Deskripsi dalam modal */
+.modal-description {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 5px;
+  text-align: justify;
 }
 
 /* CONTACT */
@@ -581,27 +516,26 @@ close:hover {
 }
 
 .contact-info-upper-container {
-  display: auto;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
   justify-content: center;
   align-items: center; /* Center align items */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250); /* Fixed background color */
-  margin: 0.5rem auto; /* Reduced margin */
-  padding: 1rem; /* Add padding for better spacing */
-  gap: 0.5rem; /* Reduced gap between items */
+  gap: 20px; /* Add gap between contact items */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .contact-info-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: r0.3em;
   margin: 0.005rem; /* Reduced margin */
   flex: 5; /* Allow items to grow equally */
   min-width: 250px; /* Ensure minimum width */
+   background-color: #fff; /* Latar belakang putih */
+  padding: 0.8rem 1rem; /* Biar ada ruang di dalam */
+  border-radius: 0.5rem; /* Biar sudutnya membulat */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahin efek shadow biar elegan */
 }
 
 .contact-info-container p {
@@ -619,6 +553,8 @@ close:hover {
   height: 3rem;
 }
 
+
+
 /* Add styles for contact textbox */
 .contact-textbox {
   width: 100%;
@@ -626,9 +562,10 @@ close:hover {
   padding: 1rem;
   border: 1px solid rgb(163, 163, 163);
   border-radius: 0.5rem;
-  margin: 1rem 0;
+  margin: 0.05rem;
   font-size: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Set background color to white */
 }
 
 /* Responsive styles */
@@ -637,21 +574,21 @@ close:hover {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    gap: 1rem;
+    gap: 0.05rem;
   }
   .contact-info-container {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: right;
   }
   .contact-info-container p {
     font-size: 1rem;
   }
   .contact-icon {
-    height: 1.5rem;
+    height: 2rem;
   }
   .email-icon {
-    height: 2rem;
+    height: 2.5rem;
   }
 }
 
@@ -794,4 +731,11 @@ font-weight: 1000;
   text-decoration: none;
   font-size: 30px;
   display: block;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0; /* Remove margin between "Explore My" and "Competencesis" */
 }

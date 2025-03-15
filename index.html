@@ -18,13 +18,14 @@
             background-color: #f9f9f9;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 400px;
-            margin: 0 auto;
+            margin: 20px auto; /* Add margin for spacing */
         }
         .contact-box h2 {
             margin-bottom: 10px;
         }
         .contact-box p {
             margin: 5px 0;
+            text-align: center; /* Center align text */
         }
         .contact-box a {
             color: #333;
@@ -94,9 +95,95 @@
                 margin-bottom: 10px;
             }
         }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px; /* Add padding to avoid header overlap */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 100%; /* Could be more or less, depending on screen size */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Add shadow for better visibility */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #modal-image {
+            max-width: 75%; /* Reduce the max width */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .modal-content p {
+            text-align: justify; /* Justify text inside the modal */
+        }
+        .contact-info-upper-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Add gap between contact items */
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+        .contact-info-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Add gap between icon and text */
+            padding-left: 10px; /* Move the content slightly to the right */
+        }
+        .contact-info-container img {
+            width: 30px; /* Adjust icon size */
+            height: 30px; /* Adjust icon size */
+        }
+        .contact-info-container p {
+            margin: 0;
+        }
+        .experience-details-container {
+            display: flex;
+            justify-content: center; /* Center the content */
+            gap: 20px; /* Adjust gap between sections */
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+        .about-containers {
+            margin-bottom: 20px; /* Reduce the spacing between sections */
+        }
+        .about-details-container {
+            display: flex;
+            justify-content: center; /* Center the content */
+            gap: 20px; /* Adjust gap between sections */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        .details-container {
+            text-align: center; /* Center align text */
+            width: auto; /* Adjust width to fit content */
+            padding: 10px; /* Add padding for better spacing */
+            border: 1px solid #ddd; /* Add border for better visibility */
+            border-radius: 10px; /* Add border radius for better aesthetics */
+            background-color: #f9f9f9; /* Add background color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+        }
+        .details-container h3, .details-container p {
+            font-size: 1em; /* Adjust font size */
+        }
     </style>
-</head>
-<body onload="closeAllPopups()">
     <header>
         <div class="header-content">
             <div class="logo">Vanessa Suharly</div>
@@ -142,29 +229,29 @@
             <h1 class="title">About Me</h1>
             <div class="section-container-box">
                 <div class="about-details-container">
-                    <div class="about-containers" style="display: flex; gap: 20px;">
-                        <div class="details-container" onclick="openModal('Academic Focus Grade', '', 'Advanced Mathematics - 87,93,86 | English - 90, 92, 92 | Informatics - 85,87,98 | Economics - 91,94,92', '')">
-                            <h3 class="center-text">Academic Focus</h3>
-                            <p class="center-text">Advanced Mathematics, <br />English, Informatics, and Economics</p>
-                        </div>
-                        <div class="details-container">
-                            <h3 class="center-text">Organization</h3>
-                            <p class="center-text">Programmer and Designer - Coding Club, <br />Director of Academic Affairs - Student Council (OSIS)</p>
-                        </div>
+                    <div class="details-container" onclick="openModal('Academic Focus Grade', '', 'Advanced Mathematics - 87,93,86 | English - 90, 92, 92 | Informatics - 85,87,98 | Economics - 91,94,92', '')">
+                        <h3 class="center-text">Academic Focus</h3>
+                        <p class="center-text">Advanced Mathematics, <br />English, Informatics, and Economics</p>
                     </div>
-                    <div class="text-container">
-                        <p>
-                            Hi, I'm Vanessa Suharly, an aspiring software engineer with a strong foundation in programming, website development, and problem-solving. I have a passion for digital innovation, demonstrated by my experience in developing websites, optimizing event systems, and building software projects. Skilled in HTML, C++, Microsoft Office, Canva, Scratch, and MIT App Inventor, I excel at creating functional and user-friendly applications.
-                              As a Programmer in the Coding Club, I executed various coding projects, including website development and automation tasks. I also managed and maintained the school’s website, ensuring smooth functionality and user experience. My leadership as the Director of Academic Affairs in OSIS has strengthened my communication and teamwork skills, where I led initiatives and fostered collaboration within the academic community.
-                            <br> I'm excited to leverage my technical and leadership experience to develop innovative solutions and contribute to the world of software engineering.
-                        </p>
+                    <div class="details-container">
+                        <h3 class="center-text">Organization</h3>
+                        <p class="center-text">Programmer and Designer - Coding Club, <br />Director of Academic Affairs - Student Council (OSIS)</p>
                     </div>
+                </div>
+                <div class="text-container">
+                    <p>
+                        Hi, I'm Vanessa Suharly, an aspiring software engineer with a strong foundation in programming, website development, and problem-solving. I have a passion for digital innovation, demonstrated by my experience in developing websites, optimizing event systems, and building software projects. Skilled in HTML, C++, Microsoft Office, Canva, Scratch, and MIT App Inventor, I excel at creating functional and user-friendly applications.
+                          As a Programmer in the Coding Club, I executed various coding projects, including website development and automation tasks. I also managed and maintained the school’s website, ensuring smooth functionality and user experience. My leadership as the Director of Academic Affairs in OSIS has strengthened my communication and teamwork skills, where I led initiatives and fostered collaboration within the academic community.
+                        <br> I'm excited to leverage my technical and leadership experience to develop innovative solutions and contribute to the world of software engineering.
+                    </p>
                 </div>
             </div>
         </section>
         <section id="experience">
-            <p class="section__text__p1">Explore My</p>
-            <h1 class="title">Competencesis</h1>
+            <div class="section-header">
+                <p class="section__text__p1">Explore My</p>
+                <h1 class="title">Competencesis</h1>
+            </div>
             <div class="experience-details-container">
                 <div class="about-containers">
                     <div class="details-container">
@@ -265,6 +352,15 @@
             </div>
         </section>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-date"></p>
+            <p id="modal-description"></p>
+            <img id="modal-image" src="" alt="Project Image">
+        </div>
+    </div>
     <footer>
         <nav>
             <ul class="nav-links">
@@ -277,6 +373,29 @@
         <p>Copyright &#169; 2025 Vanessa Suharly. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        function openModal(title, date, description, imageSrc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-date').innerText = date;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-image').src = imageSrc;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+
+        document.querySelector('.close').onclick = function() {
+            closeModal();
+        }
+    </script>
 </body>
 </html>
 

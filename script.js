@@ -1,50 +1,66 @@
-function toggleMenu() {
-    const menu = document.getElementById('mobile-nav');
-    const icon = document.querySelector('.hamburger');
-    menu.classList.toggle("active");
-    icon.classList.toggle("open");
-}
+document.addEventListener("DOMContentLoaded", () => {
+    function toggleMenu() {
+        const menu = document.querySelector(".nav-menu");
+        if (menu) {
+            menu.classList.toggle("open");
+        } else {
+            console.error("Menu not found.");
+        }
+    }
 
-function openModal(title, date, description, imageUrl) {
-    document.getElementById("modal-title").textContent = title;
-    document.getElementById("modal-date").textContent = date;
-    document.getElementById("modal-description").textContent = description;
-    const modalImage = document.getElementById("modal-image");
-    if (imageUrl) {
-        modalImage.src = imageUrl;
-        modalImage.style.display = "block";
+    window.openModal = function (title, date, description, imageUrl) {
+        const modalTitle = document.getElementById("modal-title");
+        const modalDate = document.getElementById("modal-date");
+        const modalDesc = document.getElementById("modal-description");
+        const modalImage = document.getElementById("modal-image");
+        const modal = document.getElementById("myModal");
+
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalDate) modalDate.textContent = date;
+        if (modalDesc) modalDesc.textContent = description;
+
+        if (modalImage) {
+            if (imageUrl) {
+                modalImage.src = imageUrl;
+                modalImage.style.display = "block";
+            } else {
+                modalImage.style.display = "none";
+            }
+        }
+
+        if (modal) {
+            modal.style.display = "flex";
+        } else {
+            console.error("Modal element not found.");
+        }
+    };
+
+    window.closeModal = function () {
+        const modal = document.getElementById("myModal");
+        if (modal) {
+            modal.style.display = "none";
+        } else {
+            console.error("Modal element not found.");
+        }
+    };
+
+    // Event listener untuk klik di luar modal
+    const modal = document.getElementById("myModal");
+    if (modal) {
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
     } else {
-        modalImage.style.display = "none";
+        console.error("Modal element not found.");
     }
-    document.getElementById("projectModal").style.display = "flex";
-}
 
-function closeModal() {
-    document.getElementById("projectModal").style.display = "none";
-}
-
-// Close modal when clicking outside of modal-content
-document.getElementById("projectModal").addEventListener("click", function (event) {
-    if (event.target === this) {
-        closeModal();
+    // Ambil tombol close dengan class yang benar
+    const closeButton = document.querySelector(".close");
+    if (closeButton) {
+        closeButton.addEventListener("click", closeModal);
+    } else {
+        console.error("Close button not found.");
     }
 });
-
-// Ensure the modal close button works
-document.querySelector(".close").addEventListener("click", closeModal);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.getElementById('mobile-nav');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-        hamburger.setAttribute('aria-expanded', !expanded);
-    });
-});
-
-function toggleMenu() {
-    const menu = document.querySelector('.nav-menu');
-    menu.classList.toggle('open');
-}
