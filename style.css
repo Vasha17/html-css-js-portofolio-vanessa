@@ -28,66 +28,122 @@ p {
   color: rgb(85, 85, 85);
 }
 
-/* HEADER & FOOTER */
+/* HEADER */
 header {
-  background-color: #000; /* Blue color */
-  color: #f8f8f8; /* Text color */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  position: fixed; /* Fix header at the top */
-  width: 100vw; /* Full width */
-  left: 0; /* Align to the left */
-  top: 0; /* Align to the top */
-  z-index: 1000; /* Ensure it stays on top */
+  background-color: #000;
+  color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
   width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  padding-bottom: 1rem;
 }
 
+/* LOGO */
 header .logo {
   font-size: 2rem;
-  font-weight: 600; /* Make logo text bold */
-  font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* NAVIGATION */
+/* Fix Spacing for Nav Links */
 header .nav-links {
-  display: flex; /* Show nav links on desktop */
-  gap: 400px; /* Adjust gap between links */
-  list-style: none;
-  padding-top: 10px;
+  display: flex;
+  flex-direction: column; /* Biar tetap vertikal di mobile */
+  align-items: center; /* Center align */
+  padding: 0;
   margin: 0;
-  margin-bottom: 30px; /* Add space below the nav links */
+  gap: 0; /* Hapus gap antar link */
 }
 
+header .nav-links li:nth-child(3),
+header .nav-links li:nth-child(4) {
+  order: -1; /* Move "Projects" and "Contacts" to the top */
+}
+
+header .nav-links li:nth-child(3) {
+  margin-bottom: 0; /* Remove gap between "Projects" and "Contacts" */
+}
 
 header .nav-links a {
-  color: white; /* Link color */
+  color: white;
   text-decoration: none;
-  margin-right: flex; /* Adjust margin */
-  font-size: 1rem; /* Adjust font size */
-  transition: color 0.3s ease; /* Add transition for hover effect */
+  font-size: 0.8rem; /* Reduce font size */
+  padding: 5px; /* Reduce padding */
+  display: block; /* Biar full width */
+  width: 100%; /* Pastikan full width */
+  text-align: center; /* Teks tetap rata tengah */
+}
+
+/* Bookmark Effect */
+header .nav-links a {
+  position: relative; /* Agar ::before bisa bekerja */
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+  z-index: 2; /* Supaya teks ada di atas */
+}
+
+header .nav-links a::before {
+  content: ""; /* Tambahkan pseudo-element */
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 130%; /* Lebarkan agar terlihat */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Warna hitam lebih pekat */
+  border-radius: 5px; /* Biar smooth */
+  z-index: -1; /* Supaya di belakang teks */
 }
 
 header .nav-links a:hover {
-  color: #f0f0f0; /* Change color on hover */
-  text-decoration: underline; /* Add underline on hover */
+  color: #f0f0f0;
+  text-decoration: underline;
 }
 
-header .hamburger-icon {
-  display: none; /* Remove hamburger menu */
-}
-header .nav-links a,
-footer .nav-links a {
-  color: white; /* Link color */
-  text-decoration: none; 
+/* RESPONSIVE */
+@media screen and (max-width: 480px) {
+  header .nav-links {
+    flex-direction: column;
+    gap: 0; /* Remove gap between links */
+  }
+
+  header .nav-links a {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  header .nav-links a::before {
+    width: 140%; /* Lebarkan untuk efek bookmark */
+    height: 100%;
+    left: -20px;
+  }
 }
 
-header .nav-links a:hover,
-footer .nav-links a:hover {
-  text-decoration: underline; 
+@media screen and (max-width: 320px) {
+  header .nav-links {
+    flex-direction: row; /* Align links horizontally */
+    gap: 0; /* Remove gap between links */
+    justify-content: space-between; /* Distribute space evenly */
+  }
+
+  header .nav-links a {
+    padding: 5px; /* Reduce padding */
+    font-size: 0.8rem; /* Reduce font size */
+  }
+
+  header .nav-links a::before {
+    width: 100%; /* Adjust width for bookmark effect */
+    height: 100%;
+    left: 0;
+  }
 }
 
 /* TRANSITION */
@@ -107,13 +163,19 @@ nav,
 nav {
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
+  height: 20vh;
 }
 
 .nav-links {
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  margin-left: auto;
+  display: flex;
+}
+
+.text-container.nav-links{
+  text-align: center;
 }
 
 a {
@@ -321,6 +383,17 @@ article {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  header nav {
+    flex-direction: row; /* Align items horizontally on mobile */
+    align-items: center; /* Center align items */
+  }
+
+  header .nav-links {
+    gap: 0.5rem; /* Reduce gap between links */
+    flex-direction: row; /* Align links horizontally on mobile */
+    align-items: center; /* Center align links */
+  }
+
   .competencies-container {
       flex-direction: column;
       align-items: center;
